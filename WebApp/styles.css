@@ -37,6 +37,28 @@ body {
     color: #e6eee9;
 }
 
+.header-actions {
+    display: grid;
+    gap: 12px;
+    justify-items: end;
+}
+
+.theme-toggle {
+    min-height: 38px;
+    border: 1px solid #f3c995;
+    border-radius: 6px;
+    padding: 0 14px;
+    font: inherit;
+    font-weight: 700;
+    color: #314d43;
+    background: #f3c995;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: #e8b977;
+}
+
 .label {
     margin: 0 0 6px;
     font-size: 13px;
@@ -382,13 +404,112 @@ select:focus {
     background: #a56a38;
 }
 
+body.dark-theme {
+    color: #eeeeee;
+    background: #171d1b;
+}
+
+body.dark-theme .top-header {
+    background: #111816;
+}
+
+body.dark-theme .header-text {
+    color: #cbd8d1;
+}
+
+body.dark-theme .theme-toggle {
+    border-color: #83a792;
+    color: #ffffff;
+    background: #3d6756;
+}
+
+body.dark-theme .theme-toggle:hover {
+    background: #4d7d68;
+}
+
+body.dark-theme .catalog-section,
+body.dark-theme .side-panel,
+body.dark-theme .modal-card {
+    border-color: #35443e;
+    background: #222b28;
+}
+
+body.dark-theme .book-card,
+body.dark-theme .selected-list li,
+body.dark-theme .rating-button {
+    border-color: #35443e;
+    background: #1d2522;
+}
+
+body.dark-theme input,
+body.dark-theme select {
+    border-color: #4b5c55;
+    color: #eeeeee;
+    background: #151c1a;
+}
+
+body.dark-theme input::placeholder {
+    color: #8fa099;
+}
+
+body.dark-theme .field,
+body.dark-theme .author,
+body.dark-theme .selected-list span,
+body.dark-theme .modal-author,
+body.dark-theme .rating-block {
+    color: #b9c6c0;
+}
+
+body.dark-theme .counter,
+body.dark-theme .genre,
+body.dark-theme .details-button,
+body.dark-theme .book-info button.added {
+    color: #dce9df !important;
+    background: #30443b !important;
+}
+
+body.dark-theme .details-button:hover {
+    background: #3a5448 !important;
+}
+
+body.dark-theme .add-form,
+body.dark-theme .rating-block {
+    border-color: #35443e;
+}
+
+body.dark-theme .empty-message,
+body.dark-theme .side-note {
+    color: #9aaaa3;
+}
+
+body.dark-theme .modal {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+body.dark-theme .modal-close,
+body.dark-theme .remove-button {
+    color: #ffd7d7;
+    background: #663838;
+}
+
+body.dark-theme .rating-button {
+    color: #f3c995;
+}
+
+body.dark-theme .rating-button.active {
+    border-color: #f3c995;
+    color: #111816;
+    background: #f3c995;
+}
+
 @media (max-width: 850px) {
     .top-header {
         display: block;
         padding: 24px;
     }
 
-    .header-text {
+    .header-actions {
+        justify-items: start;
         margin-top: 12px;
     }
 

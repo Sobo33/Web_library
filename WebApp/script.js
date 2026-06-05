@@ -72,6 +72,7 @@ const modalTitle = document.getElementById("modalTitle");
 const modalAuthor = document.getElementById("modalAuthor");
 const modalDescription = document.getElementById("modalDescription");
 const ratingButtons = document.getElementById("ratingButtons");
+const themeToggle = document.getElementById("themeToggle");
 
 function escapeHtml(value) {
     return value
@@ -176,6 +177,12 @@ function renderSelectedBooks() {
 function updatePage() {
     renderBooks();
     renderSelectedBooks();
+}
+
+function setTheme(isDark) {
+    document.body.classList.toggle("dark-theme", isDark);
+    themeToggle.textContent = isDark ? "Светлая тема" : "Темная тема";
+    localStorage.setItem("libraryTheme", isDark ? "dark" : "light");
 }
 
 function renderRatingButtons() {
@@ -297,4 +304,9 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
+themeToggle.addEventListener("click", () => {
+    setTheme(!document.body.classList.contains("dark-theme"));
+});
+
+setTheme(localStorage.getItem("libraryTheme") === "dark");
 updatePage();
