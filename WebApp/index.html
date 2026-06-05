@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-библиотека</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="top-header">
+        <div>
+            <p class="label">Курсовой проект</p>
+            <h1>Онлайн-библиотека</h1>
+        </div>
+        <p class="header-text">Простой веб-интерфейс для просмотра книг, поиска и формирования списка выбранного.</p>
+    </header>
+
+    <main class="layout">
+        <section class="catalog-section" aria-labelledby="catalog-title">
+            <div class="panel-head">
+                <div>
+                    <p class="label">Каталог</p>
+                    <h2 id="catalog-title">Список книг</h2>
+                </div>
+                <span class="counter" id="booksCount">0 книг</span>
+            </div>
+
+            <form class="filters" id="filtersForm">
+                <label class="field">
+                    <span>Поиск</span>
+                    <input type="search" id="searchInput" placeholder="Название или автор">
+                </label>
+
+                <label class="field">
+                    <span>Жанр</span>
+                    <select id="genreSelect">
+                        <option value="all">Все жанры</option>
+                        <option value="Классика">Классика</option>
+                        <option value="Фантастика">Фантастика</option>
+                        <option value="Детектив">Детектив</option>
+                        <option value="Учебная">Учебная</option>
+                    </select>
+                </label>
+            </form>
+
+            <div class="books-grid" id="booksGrid"></div>
+            <p class="empty-message" id="emptyMessage">Книги не найдены.</p>
+        </section>
+
+        <aside class="side-panel" aria-labelledby="selected-title">
+            <div class="panel-head">
+                <div>
+                    <p class="label">Выбор читателя</p>
+                    <h2 id="selected-title">Мои книги</h2>
+                </div>
+                <span class="counter" id="selectedCount">0</span>
+            </div>
+
+            <ul class="selected-list" id="selectedList"></ul>
+            <p class="side-note" id="selectedEmpty">Добавьте книгу из каталога.</p>
+
+            <form class="add-form" id="addBookForm">
+                <h3>Добавить книгу</h3>
+                <label class="field">
+                    <span>Название</span>
+                    <input type="text" id="newTitle" required>
+                </label>
+                <label class="field">
+                    <span>Автор</span>
+                    <input type="text" id="newAuthor" required>
+                </label>
+                <label class="field">
+                    <span>Жанр</span>
+                    <select id="newGenre">
+                        <option>Классика</option>
+                        <option>Фантастика</option>
+                        <option>Детектив</option>
+                        <option>Учебная</option>
+                    </select>
+                </label>
+                <button class="primary-button" type="submit">Добавить в каталог</button>
+            </form>
+        </aside>
+    </main>
+
+    <div class="modal" id="bookModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">x</button>
+            <p class="label" id="modalGenre">Жанр</p>
+            <h2 id="modalTitle">Название книги</h2>
+            <p class="modal-author" id="modalAuthor">Автор</p>
+            <p class="modal-description" id="modalDescription">Описание книги.</p>
+
+            <div class="rating-block">
+                <span>Оценка:</span>
+                <div class="rating-buttons" id="ratingButtons"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
